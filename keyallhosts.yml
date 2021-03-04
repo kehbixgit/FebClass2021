@@ -1,0 +1,13 @@
+---
+- name: Deploy public key to all hosts
+  hosts:  all
+  tasks:
+    - name: Set up multiple authorized keys
+      authorized_key:
+        user: ansible
+        state: present
+        key: '{{ item }}'
+      with_file:
+        - ~/.ssh/id_rsa.pub
+
+

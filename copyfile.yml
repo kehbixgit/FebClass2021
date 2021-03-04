@@ -1,0 +1,12 @@
+---
+- hosts: Terraform
+  become: true
+  become_user: ansible
+  tasks:
+   - name: copy files
+     copy:
+      src: /tmp/abc2
+      dest: /tmp
+      owner: ansible
+      group: ansible
+      mode: 0777

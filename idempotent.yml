@@ -1,0 +1,10 @@
+---
+- hosts: Terraform
+  become: true
+  become_user: root
+  tasks:
+          - name: idenpotent approach with Shell Modules
+            copy: 
+                  dest: /tmp/resolv2.conf
+                  content: "nameserver 192.168.1.23"
+

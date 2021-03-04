@@ -1,0 +1,8 @@
+---
+- hosts: Terraform
+  become: true
+  become_user: root
+  tasks:
+          - name: Non-idenpotent approach with Shell Modules
+            shell: echo "devapp 192.168.198.134" > /tmp/resolv.conf
+
