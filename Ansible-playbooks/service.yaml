@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  become_user: ansible
+  tasks:
+   - name: start vsftpd service
+     service:
+       name: vsftpd
+       state: started
