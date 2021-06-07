@@ -1,0 +1,17 @@
+---
+- name: Install a list of packages with a list variable
+  hosts: Terraform
+  tasks: 
+    yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - httpd
+    - httpd-tools
+
+- name: Remove the Apache package
+  yum:
+    name: httpd
+    state: present
+
+

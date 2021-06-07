@@ -1,0 +1,6 @@
+Open a new terminal/session On either Visual Studio/gitbash/MobaXterm
+connect to your EC2 instance
+sudo podman ps -a
+sudo podman exec -itu root <container id> bash
+sudo apt-get update -y
+sudp apt-get install maven -y

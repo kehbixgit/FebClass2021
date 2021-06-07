@@ -1,0 +1,13 @@
+---
+- hosts: devapp
+  become: yes
+  tasks:
+    - name: Install list of packages
+      yum: name='{{item}}' state=present
+      with_items:
+       - httpd
+       - wget
+       - vim
+       - zip
+       - unzip  
+...
