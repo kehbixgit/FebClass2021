@@ -16,4 +16,6 @@ resource "aws_instance" "june21class" {
                 EOF
 }
 
-
+# terraform state list
+# terraform state show  > one of the list instance
+# terraform destroy -target=aws_instance.ec2[1]
