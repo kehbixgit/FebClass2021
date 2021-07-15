@@ -1,10 +1,11 @@
-resource "aws_instance" "Feb_Class2021" {
+resource "aws_instance" "june21class" {
+  count = 2
   ami = "ami-096fda3c22c1c990a"
   instance_type = "t2.micro"
   tags = {
-      Name = "Feb_Class2021"
+      Name = "j21class-${count.index}"
   }
-  key_name = "ec2demo_1"
+  key_name = "CCA640-2019"
   user_data = <<-EOF
                 #!/bin/bash
                 yum update -y
