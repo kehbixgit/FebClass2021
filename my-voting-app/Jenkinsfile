@@ -7,13 +7,13 @@ node {
         checkout scm
       }
       stage('Build result') {
-        resultImage = docker.build("devtraining/result-app:v1.0.3", "./result")
+        resultImage = docker.build("tno35/result-app:v1.0.1", "./result")
       }
       stage('Build vote') {
-        voteImage = docker.build("devtraining/vote-app:v1.0.3", "./vote")
+        voteImage = docker.build("tno35/vote-app:v1.0.1", "./vote")
       }
       stage('Build worker dotnet') {
-        workerImage = docker.build("devtraining/worker-app:v1.0.3", "./worker")
+        workerImage = docker.build("tno35/worker-app:v1.0.1", "./worker")
       }
       stage('Push result image') {
           resultImage.push("${env.BUILD_NUMBER}")
